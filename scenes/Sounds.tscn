@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ishmglloq7m"]
+
+[ext_resource type="Script" path="res://scripts/Sounds.gd" id="1_03kao"]
+[ext_resource type="AudioStream" uid="uid://ck123s677vjyi" path="res://assets/fx/cardSlide8.ogg" id="2_si5wk"]
+[ext_resource type="AudioStream" uid="uid://dbk5oxv1peyun" path="res://assets/fx/pickup1.ogg" id="3_ygawu"]
+
+[node name="Sounds" type="Node2D"]
+script = ExtResource("1_03kao")
+
+[node name="FlipCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_si5wk")
+volume_db = 15.0
+
+[node name="PairFound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ygawu")
+volume_db = 10.0

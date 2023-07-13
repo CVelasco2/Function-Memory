@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1fp4xop00j83"]
+
+[ext_resource type="Script" path="res://scripts/PopUp.gd" id="1_vaxqt"]
+[ext_resource type="Theme" uid="uid://x3c5exw6t30c" path="res://theme.tres" id="2_d47cj"]
+[ext_resource type="Texture2D" uid="uid://tb2asm7gs5k5" path="res://assets/ui/popup_title.png" id="3_w5glx"]
+[ext_resource type="FontFile" uid="uid://dbcx7dpma1dxm" path="res://assets/fonts/VCRosdNEUE.ttf" id="4_2c0dw"]
+[ext_resource type="FontFile" uid="uid://cjnyom6vixma3" path="res://assets/fonts/Mathis.otf" id="5_nd31h"]
+
+[sub_resource type="FontVariation" id="FontVariation_0457x"]
+base_font = ExtResource("4_2c0dw")
+
+[sub_resource type="FontVariation" id="FontVariation_l8m5v"]
+base_font = ExtResource("5_nd31h")
+
+[node name="PopUp" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vaxqt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.407843)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(900, 600)
+layout_mode = 2
+theme = ExtResource("2_d47cj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_w5glx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_0457x")
+theme_override_font_sizes/font_size = 24
+text = "Flip over matching cards to earn a point! Find all 5 pairs to win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+theme_override_colors/font_hover_color = Color(0.101961, 0.384314, 0.596078, 1)
+theme_override_fonts/font = SubResource("FontVariation_l8m5v")
+theme_override_font_sizes/font_size = 50
+text = "PLAY NOW"
+flat = true

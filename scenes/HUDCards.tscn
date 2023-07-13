@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://b878jc7cobyxf"]
+
+[ext_resource type="Theme" uid="uid://x3c5exw6t30c" path="res://theme.tres" id="1_nx2e1"]
+[ext_resource type="FontFile" uid="uid://dbcx7dpma1dxm" path="res://assets/fonts/VCRosdNEUE.ttf" id="2_cxecc"]
+[ext_resource type="Texture2D" uid="uid://bykarsoph1g8u" path="res://assets/ui/pause.png" id="2_mo5q7"]
+[ext_resource type="Texture2D" uid="uid://bgfiunbohjb30" path="res://assets/ui/return.png" id="3_fkwmf"]
+[ext_resource type="Script" path="res://scripts/CardsPause.gd" id="4_pj1qy"]
+
+[sub_resource type="FontVariation" id="FontVariation_b1bo3"]
+base_font = ExtResource("2_cxecc")
+
+[sub_resource type="FontVariation" id="FontVariation_aulu4"]
+base_font = ExtResource("2_cxecc")
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_nx2e1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 499.0
+offset_right = -17.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sections" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SectionScore" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionScore"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_b1bo3")
+theme_override_font_sizes/font_size = 25
+text = "SCORE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Panel/Sections/SectionScore"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_aulu4")
+theme_override_font_sizes/font_size = 55
+text = "##"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SectionTimer" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionTimer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_b1bo3")
+theme_override_font_sizes/font_size = 25
+text = "SECONDS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seconds" type="Label" parent="Panel/Sections/SectionTimer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_aulu4")
+theme_override_font_sizes/font_size = 55
+text = "##"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SectionMoves" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/Sections/SectionMoves"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_b1bo3")
+theme_override_font_sizes/font_size = 25
+text = "PAIRS FLIPPED:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Moves" type="Label" parent="Panel/Sections/SectionMoves"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("FontVariation_aulu4")
+theme_override_font_sizes/font_size = 55
+text = "##"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SectionButtons" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="ButtonPause" type="TextureButton" parent="Panel/Sections/SectionButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_mo5q7")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_pj1qy")
+
+[node name="ButtonReset" type="TextureButton" parent="Panel/Sections/SectionButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_fkwmf")
+ignore_texture_size = true
+stretch_mode = 5

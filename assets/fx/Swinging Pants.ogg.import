@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pmhfd00m2n51"
+path="res://.godot/imported/Swinging Pants.ogg-ca7e2a6dd85ecac466766bc9464fef8b.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/fx/Swinging Pants.ogg"
+dest_files=["res://.godot/imported/Swinging Pants.ogg-ca7e2a6dd85ecac466766bc9464fef8b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
